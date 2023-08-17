@@ -8,7 +8,7 @@ class TestCheckout():
 
 
     def test_wrong_input(self):
-        assert checkout_solution.checkout("AAAAJB") == -1
+        assert checkout_solution.checkout("AAAA8B") == -1
 
     def test_cross_promotion(self):
         assert checkout_solution.checkout("BBBEEEEE") == 230

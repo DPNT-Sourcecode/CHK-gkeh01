@@ -47,11 +47,15 @@ class Pricing:
             return -1
         total = 0
         while quantity > 0:
+            used_offer = False
             if sku in self.promotions:
                 for amount, price in self.promotions[sku].items():
                     if amount <= quantity:
                         total += price
                         quantity -= amount
+                        used_offer = True
+            if used_offer:
+                continue
             if quantity > 0:
                 total += self.prices[sku]
                 quantity -= 1

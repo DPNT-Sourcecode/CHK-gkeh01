@@ -75,7 +75,7 @@ class Pricing:
             'U': {3: "U"}
         } 
         self.bundle_promotions = {
-            'XSTYZ': {3: 45}
+            'ZSTYX': {3: 45}
         }               
     
     def apply_bundle_promotions(self, items):

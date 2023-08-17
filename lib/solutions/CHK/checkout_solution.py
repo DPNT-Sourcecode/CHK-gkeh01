@@ -25,7 +25,8 @@ class Pricing:
             'A': 50,
             'B': 30,
             'C': 20,
-            'D': 15
+            'D': 15,
+            'E': 40
         }
         self.promotions = {
             'A': {
@@ -43,11 +44,11 @@ class Pricing:
             if sku not in items:
                 continue
             for quantity, other_sku in promotion.items():
-                if other_sku not in self.items:
+                if other_sku not in items:
                     continue
-                total_items = self.items[sku]
+                total_items = items[sku]
                 free_items = total_items // quantity
-                self.items[other_sku] = max(0, self.items[other_sku] - free_items)
+                items[other_sku] = max(0, items[other_sku] - free_items)
         return items
     
     def get_price(self, items):

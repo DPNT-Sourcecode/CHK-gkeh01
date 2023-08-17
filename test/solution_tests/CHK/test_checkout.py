@@ -10,4 +10,4 @@ class TestCheckout():
         assert checkout_solution.checkout("AAAAJB") == -1
 
     def test_cross_promotion(self):
-        assert checkout_solution.checkout("AAAAJB") == -1               
+        assert checkout_solution.checkout("BBBEEEEE") == 230               

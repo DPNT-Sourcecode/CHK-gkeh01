@@ -54,6 +54,7 @@ class Pricing:
                         total += price
                         quantity -= amount
                         used_offer = True
+                        break
             if used_offer:
                 continue
             if quantity > 0:
@@ -61,3 +62,4 @@ class Pricing:
                 quantity -= 1
             
         return total      
+

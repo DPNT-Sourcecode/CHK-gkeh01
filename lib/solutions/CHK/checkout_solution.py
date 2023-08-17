@@ -49,8 +49,14 @@ class Pricing:
                 if other_sku not in items:
                     continue
                 total_items = items[sku]
-                free_items = total_items // quantity
-                items[other_sku] = max(0, items[other_sku] - free_items)
+                bought = 0
+                for i in range(total_items):
+                    bought += 1
+                    if bought == quantity:
+                        items[other_sku] = max(0, items[other_sku] - 1)
+                        bought = -1
+                #free_items = total_items // quantity
+                #items[other_sku] = max(0, items[other_sku] - free_items)
         return items
     
     def get_price(self, items):
@@ -84,3 +90,4 @@ class Pricing:
                 quantity -= 1
             
         return total      
+

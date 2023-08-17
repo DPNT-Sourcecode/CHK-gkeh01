@@ -43,13 +43,15 @@ class Pricing:
             if sku not in items:
                 continue
             for quantity, other_sku in promotion.items():
+                if other_sku not in self.items:
+                    continue
                 total_items = self.items[sku]
                 free_items = total_items // quantity
                 self.items[other_sku] = max(0, self.items[other_sku] - free_items)
         return items
     
     def get_price(self, items):
-        # items = self.apply_cross_promotions(items)
+        items = self.apply_cross_promotions(items)
         total = 0
         for sku, quantity in items.items():
             item_price = self.get_price_for_item(sku, quantity)

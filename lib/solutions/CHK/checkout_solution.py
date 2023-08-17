@@ -63,8 +63,8 @@ class Pricing:
             'P': {5: 200},
             'Q': {3: 80},
             'V': {
-                2: 90,
-                3: 130
+                3: 130,
+                2: 90
             },            
         }
         self.cross_promotions = {
@@ -126,5 +126,6 @@ class Pricing:
                 quantity -= 1
             
         return total      
+
 
 

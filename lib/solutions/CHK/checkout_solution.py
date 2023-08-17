@@ -96,7 +96,7 @@ class Pricing:
                             continue
                         items[sku] -=1
                         break
-        return total, items
+        return items, total
             
     def apply_cross_promotions(self, items):
         for sku, promotion in self.cross_promotions.items():
@@ -149,3 +149,4 @@ class Pricing:
                 quantity -= 1
             
         return total      
+

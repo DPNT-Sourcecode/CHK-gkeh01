@@ -3,7 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    skus = skus.split(" ")
+    skus = list(skus)
     pricing = Pricing()
     basket = Basket(skus)
     return pricing.get_price(basket.items)

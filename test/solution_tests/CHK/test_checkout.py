@@ -10,4 +10,8 @@ class TestCheckout():
         assert checkout_solution.checkout("AAAAJB") == -1
 
     def test_cross_promotion(self):
-        assert checkout_solution.checkout("BBBEEEEE") == 230               
+        assert checkout_solution.checkout("BBBEEEEE") == 230
+
+    def test_free_items(self):
+        assert checkout_solution.checkout("FFF") == 20
+        assert checkout_solution.checkout("FFFFF") == 40                     

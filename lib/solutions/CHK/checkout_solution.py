@@ -52,7 +52,7 @@ class Pricing:
                 bought = 0
                 for i in range(total_items):
                     bought += 1
-                    if bought == quantity:
+                    if bought == quantity and i < total_items - 1:
                         items[other_sku] = max(0, items[other_sku] - 1)
                         bought = -1
                 #free_items = total_items // quantity
@@ -90,4 +90,5 @@ class Pricing:
                 quantity -= 1
             
         return total      
+
 

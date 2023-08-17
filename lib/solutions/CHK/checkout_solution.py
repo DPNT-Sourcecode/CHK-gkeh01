@@ -92,7 +92,7 @@ class Pricing:
                 to_be_taken = promotion_amount * times_used
                 for i in range(to_be_taken):
                     for sku in skus:
-                        if items[sku] == 0:
+                        if sku not in items or items[sku] == 0:
                             continue
                         items[sku] -=1
                         break

@@ -22,4 +22,5 @@ class TestCheckout():
         assert checkout_solution.checkout("FFFFFFFFFF") == 70
 
     def test_bundle_promotions(self):
-        assert checkout_solution.checkout("XXSTYZXXSTYZZZ") == 222                          
+        assert checkout_solution.checkout("XXSTYZXXSTYZZZ") == 222
+        assert checkout_solution.checkout("ZZZ") == 45                         

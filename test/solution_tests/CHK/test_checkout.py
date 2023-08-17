@@ -19,4 +19,7 @@ class TestCheckout():
     def test_free_items(self):
         assert checkout_solution.checkout("FFF") == 20
         assert checkout_solution.checkout("FFFFF") == 40
-        assert checkout_solution.checkout("FFFFFFFFFF") == 70                     
+        assert checkout_solution.checkout("FFFFFFFFFF") == 70
+
+    def test_bundle_promotions(self):
+        assert checkout_solution.checkout("XSTYZXSTYZZZ") == 132                          

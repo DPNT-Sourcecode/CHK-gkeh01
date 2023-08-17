@@ -73,8 +73,31 @@ class Pricing:
             'N': {3: "M"},
             'R': {3: "Q"},
             'U': {3: "U"}
-        }        
+        } 
+        self.bundle_promotions = {
+            'XSTYZ': {3: 45}
+        }               
     
+    def apply_bundle_promotions(self, items):
+        total = 0
+        for skus, promotions in self.bundle_promotions.items():
+            skus = list(skus)
+            total_amount = 0
+            for sku in skus:
+                if sku in items:
+                    total_amount += items[sku]
+            for promotion_amount, promotion_price in promotions.items():
+                times_used = total_amount // promotion_amount
+                total += times_used * promotion_price
+                to_be_taken = promotion_amount * times_used
+                for i in range(to_be_taken):
+                    for sku in skus:
+                        if items[sku] == 0:
+                            continue
+                        items[sku] -=1
+                        break
+        return total, items
+            
     def apply_cross_promotions(self, items):
         for sku, promotion in self.cross_promotions.items():
             if sku not in items:
@@ -97,7 +120,7 @@ class Pricing:
     
     def get_price(self, items):
         items = self.apply_cross_promotions(items)
-        total = 0
+        items, total = self.apply_bundle_promotions(items)
         for sku, quantity in items.items():
             item_price = self.get_price_for_item(sku, quantity)
             if item_price == -1:

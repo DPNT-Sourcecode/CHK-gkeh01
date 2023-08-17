@@ -92,6 +92,3 @@ class Pricing:
                 quantity -= 1
             
         return total      
-
-
-

@@ -5,6 +5,7 @@ class TestCheckout():
     def test_checkout(self):
         assert checkout_solution.checkout("AAAAB") == 210
         assert checkout_solution.checkout("AAAAAA") == 250
+        assert checkout_solution.checkout("HHHHHHHHHHHH") == 100
 
 
     def test_wrong_input(self):
@@ -19,3 +20,4 @@ class TestCheckout():
         assert checkout_solution.checkout("FFF") == 20
         assert checkout_solution.checkout("FFFFF") == 40
         assert checkout_solution.checkout("FFFFFFFFFF") == 70                     
+

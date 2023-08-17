@@ -56,8 +56,8 @@ class Pricing:
                 },
             'B': {2: 45},
             'H': {
+                10: 80,
                 5: 45,
-                10: 80
             },
             'K': {2: 150},
             'P': {5: 200},
@@ -126,4 +126,5 @@ class Pricing:
                 quantity -= 1
             
         return total      
+
 

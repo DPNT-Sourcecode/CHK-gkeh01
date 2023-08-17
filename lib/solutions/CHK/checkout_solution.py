@@ -28,7 +28,10 @@ class Pricing:
             'D': 15
         }
         self.promotions = {
-            'A': {3: 130},
+            'A': {
+                    5: 200,
+                    3: 130,
+                },
             'B': {2: 45},
         }
     
@@ -62,3 +65,4 @@ class Pricing:
                 quantity -= 1
             
         return total      
+
